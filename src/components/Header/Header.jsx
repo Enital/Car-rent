@@ -1,3 +1,9 @@
+import css from 'components/Header/header.module.css';
+
 export default function Header() {
-  return <h1>Header</h1>;
+  return (
+    <div className={css.header}>
+      <h1 className={css.title}>Header</h1>
+    </div>
+  );
 }
