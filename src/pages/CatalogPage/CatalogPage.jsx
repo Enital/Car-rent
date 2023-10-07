@@ -24,6 +24,7 @@ export default function CatalogPage() {
       {adverts.map(advert => {
         return <CatalogItem key={advert.id} advert={advert} />;
       })}
+      <button onClick={() => setPage(page + 1)}>Load More</button>
     </div>
   );
 }
