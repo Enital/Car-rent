@@ -1,3 +1,10 @@
+import CatalogItem from 'components/CatalogItem/CatalogItem';
+
 export default function CatalogPage() {
-  return <h1>CatalogPage</h1>;
+  return (
+    <div>
+      <h1>CatalogPage</h1>
+      <CatalogItem />
+    </div>
+  );
 }

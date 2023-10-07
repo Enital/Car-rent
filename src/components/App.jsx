@@ -11,15 +11,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<MainPage />} />
-
-          <Route
-            path="catalog"
-            element={<Route redirectTo="/" component={<CatalogPage />} />}
-          />
-          <Route
-            path="favorites"
-            element={<Route redirectTo="/" component={<Favorite />} />}
-          />
+          <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/favorites" element={<Favorite />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
