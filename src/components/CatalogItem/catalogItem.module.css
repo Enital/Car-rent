@@ -1,3 +1,26 @@
+.infoBlock {
+  height: 72px;
+  width: 274px;
+}
+
+.title {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.model {
+  color: #3470FF;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .image {
   height: 268px;
   width: 274px;
@@ -5,6 +28,10 @@
 }
 
 .img {
-  height: 268px;
+  border-radius: 12px;
+  object-fit: cover;
+  overflow: hidden;
   width: 274px;
+  height: 268px;
+  margin-bottom: 14px;
 }

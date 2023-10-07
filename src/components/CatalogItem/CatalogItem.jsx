@@ -1,40 +1,29 @@
-import { useEffect, useState } from 'react';
-import fetchData from 'Services/fetchData';
-
 import css from './catalogItem.module.css';
-export default function CatalogItem() {
-  const [adverts, setAdverts] = useState([]);
-  const [page, setPage] = useState(1);
+export default function CatalogItem({ advert }) {
+  console.log(advert);
+  const address = advert.address.split(',');
+  const city = address[1];
+  const country = address[2];
+  console.log(city);
 
-  useEffect(() => {
-    getData(page);
-  }, [page]);
-
-  const getData = page => {
-    fetchData(page)
-      .then(data => {
-        setAdverts(data);
-      })
-      .catch(err => console.log(err));
-  };
-  // console.log(adverts);
   return (
     <>
       <li className={css.item}>
         {/* <div className={css.image}></div> */}
-        <img
-          src="https://www.pexels.com/photo/photo-of-red-sports-car-2684219/"
-          alt="car_image"
-          height={268}
-        />
-        <div>
-          <div>
-            <h2>Bulk Enclave, 2008</h2>
-            <p>$80</p>
+        <img src={advert.img} alt="car_image" className={css.img} />
+        <div className={css.infoBlock}>
+          <div className={css.info}>
+            <h2 className={css.title}>
+              {advert.make} <span className={css.model}>{advert.model}</span>
+            </h2>
+            <p>{advert.rentalPrice}</p>
           </div>
 
           <p>
-            city | country | rentalCompany | Premium | model | miles | Power
+            {city} | {country} | {advert.rentalCompany} | Premium
+          </p>
+          <p>
+            | {advert.model} | {advert.miles} | {advert.functionalities[1]}
           </p>
         </div>
 
