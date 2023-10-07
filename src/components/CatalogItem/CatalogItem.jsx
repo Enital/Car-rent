@@ -14,7 +14,8 @@ export default function CatalogItem({ advert }) {
         <div className={css.infoBlock}>
           <div className={css.info}>
             <h2 className={css.title}>
-              {advert.make} <span className={css.model}>{advert.model}</span>
+              {advert.make} <span className={css.model}>{advert.model}</span>{' '}
+              {advert.year}
             </h2>
             <p>{advert.rentalPrice}</p>
           </div>
