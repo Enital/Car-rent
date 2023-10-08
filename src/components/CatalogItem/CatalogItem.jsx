@@ -1,10 +1,10 @@
 import css from './catalogItem.module.css';
 export default function CatalogItem({ advert }) {
-  console.log(advert);
+  // console.log(advert);
   const address = advert.address.split(',');
   const city = address[1];
   const country = address[2];
-  console.log(city);
+  // console.log(city);
 
   return (
     <>
@@ -19,16 +19,20 @@ export default function CatalogItem({ advert }) {
             </h2>
             <p>{advert.rentalPrice}</p>
           </div>
+          <nobr>
+            <p className={css.itemDescription}>
+              {city} | {country} | {advert.rentalCompany} | Premium
+            </p>
+          </nobr>
 
-          <p>
-            {city} | {country} | {advert.rentalCompany} | Premium
-          </p>
-          <p>
-            | {advert.model} | {advert.miles} | {advert.functionalities[1]}
-          </p>
+          <nobr>
+            <p className={css.itemDescription}>
+              {advert.model} | {advert.mileage} | {advert.functionalities[1]}
+            </p>
+          </nobr>
         </div>
 
-        <button>Learn more</button>
+        <button className={css.itemButton}>Learn more</button>
       </li>
     </>
   );
