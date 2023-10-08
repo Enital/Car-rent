@@ -1,9 +1,16 @@
+.filter {
+  display: flex;
+  flex-direction: row;
+  /* margin: 0 auto; */
+  justify-content: center;
+}
+
 .select {
   display: inline-block;
   position: relative;
   overflow: hidden;
-  height: 48px;
-  width: 224px;
+  height: 20px;
+  width: 117px;
   background: #F7F7FB;
   /* border: 1px solid; */
   border-color: white;
@@ -17,6 +24,6 @@
 }
 
 input {
-  height: 48px;
-  width: 160px;
+  height: 20px;
+  width: 117px;
 }

@@ -23,6 +23,7 @@ export default function CatalogPage() {
       .catch(err => console.log(err));
   };
   console.log(adverts);
+
   const handleLoadMore = () => {
     setPage(prevPage => prevPage + 1);
   };
