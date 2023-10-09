@@ -28,13 +28,29 @@
 }
 
 .img {
-  margin-top: 50px;
+  /* margin-top: 50px; */
   border-radius: 12px;
   object-fit: cover;
   overflow: hidden;
   width: 274px;
   height: 268px;
-  margin-bottom: 14px;
+  /* margin-bottom: 14px; */
+}
+
+.imgWrapper {
+  position: relative;
+}
+
+.heartButton {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+}
+
+.heartFill {
+  fill: rgba(52, 112, 255, 1);
 }
 
 .itemButton {

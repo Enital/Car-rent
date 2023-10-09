@@ -1,0 +1,30 @@
+.catalog {
+  padding: 50px 0 0 0;
+}
+
+.catalogList {
+  display: flex;
+  padding: 0 128px;
+  flex-wrap: wrap;
+  width: auto;
+  gap: 29px;
+  margin-bottom: 100px;
+}
+
+.loadMoreButton {
+  color: #3470ff;
+  background: inherit;
+  border: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  display: flex;
+  margin: 0 auto;
+  text-decoration-line: underline;
+}
+
+.loadMoreButton:hover,
+.loadMoreButton:focus {
+  color: #0b44cd;
+}

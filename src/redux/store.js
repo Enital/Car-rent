@@ -1,12 +1,3 @@
-// import { configureStore } from '@reduxjs/toolkit';
-// import { advertReducer } from './advertSlice';
-
-// export const store = configureStore({
-//   reducer: {
-//     adverts: advertReducer,
-//   },
-// });
-
 import { configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
@@ -20,6 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import advertReducer from './advertSlice';
+import catalogReducer from './catalogSlice';
 
 const advertPersistConfig = {
   key: 'advert',
@@ -30,14 +22,16 @@ const persistedReducer = persistReducer(advertPersistConfig, advertReducer);
 export const store = configureStore({
   reducer: {
     advert: persistedReducer,
+    catalog: catalogReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        ignoredPaths: ['transactions.date'],
       },
-      ignoredPaths: ['transactions.date'],
     }),
+  devTools: process.env.NODE_ENV === 'development',
 });
 
 export const persistor = persistStore(store);
