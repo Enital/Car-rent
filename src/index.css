@@ -36,10 +36,19 @@ button {
   color: inherit;
 }
 
-.container {
+/* .container {
   width: 1440px;
   padding-left: 25px;
   padding-right: 25px;
+} */
+.container {
+  display: flex;
+  position: absolute;
+  left: 170px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 98%;
+  margin: 0 auto;
 }
 
 li {

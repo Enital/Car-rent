@@ -1,8 +1,9 @@
 .container {
   display: flex;
+  position: fixed;
+  left: 170px;
   flex-wrap: wrap;
   justify-content: center;
   width: 98%;
   margin: 0 auto;
-  padding: 0 10px;
 }

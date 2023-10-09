@@ -29,52 +29,61 @@ export default function CatalogItem({ adverts, onFilter }) {
     onFilter(filters);
   };
   return (
-    <div className={css.filter}>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="Car brand">
-          <p>Car brand</p>
-          <select
-            value={make}
-            onchange={e => setMake(e.target.value)}
-            className={css.select}
-          >
-            <option>Enter the text</option>
-            {makeArrayUnique.map(make => (
-              <option>{make}</option>
-            ))}
-          </select>
-        </label>
-        <label htmlFor="Price / 1 hour">
-          <p>Price / 1 hour</p>
-          <select
-            value={price}
-            onchange={e => setPrice(e.target.value)}
-            className={css.select}
-          >
-            <option>Enter the text</option>
-            {priceArraySorted.map(price => (
-              <option>{price}</option>
-            ))}
-          </select>
-        </label>
+    <div className={css.container}>
+      <div className={css.filter}>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="Car brand">
+            <p className={css.formText}>Car brand</p>
+            <select
+              value={make}
+              onchange={e => setMake(e.target.value)}
+              className={css.select}
+            >
+              <option>Enter the text</option>
+              {makeArrayUnique.map(make => (
+                <option>{make}</option>
+              ))}
+            </select>
+          </label>
+          <label htmlFor="Price / 1 hour">
+            <p className={css.formText}>Price / 1 hour</p>
+            <select
+              value={price}
+              onchange={e => setPrice(e.target.value)}
+              className={css.select}
+            >
+              <option>To $</option>
+              {priceArraySorted.map(price => (
+                <option>{price}</option>
+              ))}
+            </select>
+          </label>
 
-        <label htmlFor="Car mileage /km">
-          <input
-            type="number"
-            value={minMileage}
-            onChange={e => setMinMileage(e.target.value)}
-            placeholder="From"
-          />
-          <input
-            type="number"
-            value={maxMileage}
-            onChange={e => setMaxMileage(e.target.value)}
-            placeholder="To"
-          />
-        </label>
+          <label htmlFor="Car mileage /km">
+            <p className={`${css.formText} ${css.formTextMile}`}>
+              Car mileage /km
+            </p>
+            <input
+              type="number"
+              value={minMileage}
+              onChange={e => setMinMileage(e.target.value)}
+              placeholder="From"
+              className={css.input}
+            />
+            <input
+              type="number"
+              value={maxMileage}
+              onChange={e => setMaxMileage(e.target.value)}
+              placeholder="To"
+              className={`${css.input} ${css.inputTo}`}
+            />
+          </label>
 
-        <button type="submit">Search</button>
-      </form>
+          <button type="submit" className={css.search}>
+            <span className={css.searchText}>Search</span>
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
