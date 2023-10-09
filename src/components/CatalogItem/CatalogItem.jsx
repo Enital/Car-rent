@@ -62,7 +62,7 @@ export default function CatalogItem({ advert }) {
       </div>
 
       <button className={css.itemButton} type="button">
-        Learn more
+        <span className={css.buttonText}>Learn more</span>
       </button>
     </li>
   );

@@ -49,6 +49,10 @@
   border: none;
 }
 
+.buttonText {
+  color: #fff;
+}
+
 .heartFill {
   fill: rgba(52, 112, 255, 1);
 }

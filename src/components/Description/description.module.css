@@ -1,0 +1,17 @@
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  width: 350px;
+  height: 250px;
+  position: relative;
+  left: 130px;
+  border-radius: 20px;
+  box-shadow: rgba(240, 244, 247, 0.5) 0px 1px 2px 0px, rgba(240, 244, 247, 0.5) 0px 2px 6px 2px;
+}
+
+
+.descriptionText {
+  color: #fff;
+}

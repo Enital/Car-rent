@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   height: 100vh;
-  width: 150px;
+  width: 160px;
   background-color: #abc;
 }
 
@@ -13,31 +13,69 @@
   height: 120px;
   font-size: 1.5rem;
   font-weight: 700;
-  font-family: 'Mochiy Pop P one', sans-serif;
+  color: #3470ff;
 }
 
 .sidebarMenu {
   position: relative;
 }
 
-/* .sidebarMenuItem {
+.sidebarList {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* .sidebarList :hover {
+  background-color: #3470ff;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+} */
+
+.sidebarLi {
+  display: flex;
+  justify-content: center;
+  /* padding-left: 10px; */
+  color: #3470ff;
+  /* background-color: aqua;
+  width: 120px;
+  border-radius: 10px; */
+}
+
+.sidebarMenuItem {
   display: flex;
   align-items: center;
   place-content: flex-start;
-  padding: 1rem 3rem;
   font-size: 1.25rem;
   font-weight: 500;
-  color: #555555;
-  transition: color 0.3s ease-in-out;
+  /* color: #555555; */
+  /* background-color: aqua;
+  width: 120px;
+  border-radius: 10px; */
 }
 
 .sidebarMenuItem.active {
   color: #fff;
 }
 
+.sidebarLink {
+  /* background-color: aqua; */
+  width: 120px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebarLink:hover {
+  background-color: #3470ff;
+  color: #fff;
+  transition: all 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
 .sidebarMenuItemIcon {
-  margin-right: 1rem; */
-/* } */
+  margin-right: 1rem;
+}
 
 /* i {
   font-size: 1.75rem;

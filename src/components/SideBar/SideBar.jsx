@@ -10,17 +10,17 @@ export default function Sidebar() {
         <ul className={css.sidebarList}>
           <li className={css.sidebarLi}>
             <NavLink to="/" className={css.sidebarLink}>
-              <span>Main page</span>
+              <span className={css.sidebarMenuItem}>Main page</span>
             </NavLink>
           </li>
           <li className={css.sidebarLi}>
             <NavLink to="/catalog" className={css.sidebarLink}>
-              <span>Catalog</span>
+              <span className={css.sidebarMenuItem}>Catalog</span>
             </NavLink>
           </li>
           <li className={css.sidebarLi}>
             <NavLink to="/favorites" className={css.sidebarLink}>
-              <span>Favorites</span>
+              <span className={css.sidebarMenuItem}>Favorites</span>
             </NavLink>
           </li>
         </ul>

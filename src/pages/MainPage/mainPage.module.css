@@ -4,6 +4,11 @@
   left: 170px;
   flex-wrap: wrap;
   justify-content: center;
-  width: 98%;
+  width: 100vw;
+  height: 100vh;
+  padding: 150px 20px;
   margin: 0 auto;
+  background-image: url(https://cdn.carbuzz.com/gallery-images/840x560/1003000/700/1003722.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
