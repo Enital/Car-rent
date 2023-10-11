@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import CatalogItem from 'components/CatalogItem/CatalogItem';
 import fetchData from 'Services/fetchData';
@@ -8,7 +8,7 @@ import css from './catalog.module.css';
 
 export default function Catalog() {
   const dispatch = useDispatch();
-
+  const [isButton, setIsButton] = useState(true);
   const page = useSelector(state => state.catalog.page);
   const adverts = useSelector(state => state.catalog.adverts);
   const filters = useSelector(state => state.catalog.filters);
@@ -29,6 +29,13 @@ export default function Catalog() {
     }
   }, [adverts.length, page, dispatch]);
 
+  useEffect(() => {
+    if (page > 4) {
+      setIsButton(false);
+    } else {
+      setIsButton(true);
+    }
+  }, [page]);
   // console.log(adverts);
   const filteredAdverts = adverts.filter(advert => {
     if (filters.make && adverts.make !== filters.make) {
@@ -65,13 +72,15 @@ export default function Catalog() {
           ) : (
             <div> No matches car found</div>
           )}
-          <button
-            onClick={handleLoadMore}
-            className={css.loadMoreButton}
-            type="button"
-          >
-            Load More
-          </button>
+          {isButton && (
+            <button
+              onClick={handleLoadMore}
+              className={css.loadMoreButton}
+              type="button"
+            >
+              Load More
+            </button>
+          )}
         </>
       )}
     </div>

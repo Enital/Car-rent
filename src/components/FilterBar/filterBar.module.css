@@ -1,12 +1,6 @@
 .container {
   display: flex;
-  /* position: fixed; */
-  /* left: 170px; */
-  /* flex-wrap: wrap; */
   justify-content: center;
-  /* width: 100vw; */
-  /* margin: 0 auto; */
-  /* padding: 0 10px; */
 }
 
 form {
@@ -31,25 +25,10 @@ form {
 .filter {
   display: flex;
   flex-direction: row;
-  /* margin: 0 auto; */
   justify-content: center;
 }
 
 .select {
-  /* display: inline-block;
-  position: relative;
-  overflow: hidden;
-  height: 30px;
-  width: 117px;
-  background: #F7F7FB;
-  border-color: white;
-  border-radius: 14px;
-  background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
-  background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
-  background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
-  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.06));
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08); */
   border-radius: 14px;
   background: rgb(247, 247, 251);
   padding: 14px 18px;
@@ -57,7 +36,6 @@ form {
   align-items: center;
   color: rgb(18, 20, 23);
   border: none;
-  /* font-family: Manrope, sans-serif; */
   font-size: 18px;
   font-weight: 500;
   line-height: 20px;
@@ -71,7 +49,6 @@ form {
   justify-content: center;
   align-items: center;
   color: rgb(18, 20, 23);
-  /* font-family: Manrope, sans-serif; */
   border: none;
   font-size: 18px;
   font-weight: 500;
@@ -85,6 +62,7 @@ form {
 
 .search {
   background-color: #3470ff;
+  color: #fff;
   display: flex;
   width: 136px;
   height: 48px;
@@ -94,12 +72,4 @@ form {
   flex-shrink: 0;
   border-radius: 12px;
   border: none;
-}
-
-.searchText {
-  color: rgba(255, 255, 255, 1);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 142.857%;
 }

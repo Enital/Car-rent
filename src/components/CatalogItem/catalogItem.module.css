@@ -49,9 +49,9 @@
   border: none;
 }
 
-.buttonText {
+/* .buttonText {
   color: #fff;
-}
+} */
 
 .heartFill {
   fill: rgba(52, 112, 255, 1);
@@ -60,9 +60,17 @@
 .itemButton {
   height: 44px;
   background-color: #3470FF;
+  color: #fff;
   border: 0;
   border-radius: 12px;
   margin-top: 28px;
+  transition: all .5s cubic-bezier(.22, .61, .36, 1);
+}
+
+.itemButton:hover, .itemButton:active {
+  background-color: #065dd8;
+  box-shadow: rgba(6, 93, 216, 1) 0px 5px 15px 0px;
+  transition: all .5s cubic-bezier(.22, .61, .36, 1);
 }
 
 .itemDescription {

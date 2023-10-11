@@ -92,7 +92,7 @@ export default function CatalogItem({ adverts, onFilter }) {
           </label>
 
           <button type="submit" className={css.search}>
-            <span className={css.searchText}>Search</span>
+            Search
           </button>
         </form>
       </div>
