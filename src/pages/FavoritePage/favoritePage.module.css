@@ -2,9 +2,10 @@
   display: flex;
   position: absolute;
   left: 170px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
   width: 98%;
   padding: 150px 20px;
   margin: 0 auto;
+  flex-direction: column;
 }

@@ -1,8 +1,9 @@
 .container {
   display: flex;
+  flex-direction: column;
   position: absolute;
   left: 170px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
   width: 98%;
   padding: 150px 20px;
