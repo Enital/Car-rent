@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { BsHeartFill, BsHeart } from 'react-icons/bs';
-// import { addFavorite, removeFavorite } from 'redux/advertSlice';
+import { addFavorite, removeFavorite } from 'redux/favoriteSlice';
 import css from './catalogItem.module.css';
 export default function CatalogItem({ advert }) {
-  const [favorite, setFavorite] = useState(false);
+  // const [favorite, setFavorite] = useState(false);
   const address = advert.address.split(',');
   const city = address[1];
   const country = address[2];
 
-  // const dispatch = useDispatch();
-  // const favorites = useSelector(state => state.favorite.items);
+  const dispatch = useDispatch();
+  const favorite = useSelector(state => state.favorite.favorite);
   const handleFavorite = () => {
-    // const isFavorite = favorites.some(item => item.id === advert.id);
-    setFavorite(!favorite);
-    // if (isFavorite) {
-    //   dispatch(removeFavorite(advert.id));
-    // } else {
-    //   dispatch(addFavorite(advert));
-    // }
+    const isFavorite = favorite.some(item => item.id === advert.id);
+    // setFavorite(!favorite);
+    if (isFavorite) {
+      dispatch(removeFavorite(advert));
+    } else {
+      dispatch(addFavorite(advert));
+    }
   };
 
   return (
@@ -30,7 +30,7 @@ export default function CatalogItem({ advert }) {
           className={css.heartButton}
           type="button"
         >
-          {favorite ? (
+          {favorite.some(favorite => favorite.id === advert.id) ? (
             <BsHeartFill size={18} className={css.heartFill} />
           ) : (
             <BsHeart size={18} style={{ fill: 'white' }} />

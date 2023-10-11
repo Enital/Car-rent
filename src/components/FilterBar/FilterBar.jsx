@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
 
-import css from './filter.module.css';
+import css from './filterBar.module.css';
 
 export default function CatalogItem({ adverts, onFilter }) {
   const [make, setMake] = useState('');
@@ -12,36 +13,45 @@ export default function CatalogItem({ adverts, onFilter }) {
   const makeArrayUnique = array.filter(
     (item, index) => array.indexOf(item) === index
   );
+  const makeArraySorted = makeArrayUnique.sort();
+
   const priceArray = adverts.flatMap(advert => advert.rentalPrice);
   const priceArrayUnique = priceArray.filter(
     (item, index) => priceArray.indexOf(item) === index
   );
-  const priceArraySorted = priceArrayUnique.sort();
+  priceArrayUnique.forEach((item, index) => {
+    priceArrayUnique[index] = item.slice(1);
+  });
+  const priceArraySorted = priceArrayUnique.sort(function (a, b) {
+    return a - b;
+  });
 
-  const handleSubmit = e => {
+  const handleFormSubmit = e => {
     e.preventDefault();
-    const filters = {
+    const filter = {
       make,
       price,
       minMileage,
       maxMileage,
     };
-    onFilter(filters);
+    onFilter(filter);
   };
   return (
     <div className={css.container}>
       <div className={css.filter}>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleFormSubmit}>
           <label htmlFor="Car brand">
             <p className={css.formText}>Car brand</p>
             <select
               value={make}
-              onchange={e => setMake(e.target.value)}
+              onChange={e => setMake(e.target.value)}
               className={css.select}
             >
               <option>Enter the text</option>
-              {makeArrayUnique.map(make => (
-                <option>{make}</option>
+              {makeArraySorted.map((make, index) => (
+                <option key={index} value={make}>
+                  {make}
+                </option>
               ))}
             </select>
           </label>
@@ -49,12 +59,14 @@ export default function CatalogItem({ adverts, onFilter }) {
             <p className={css.formText}>Price / 1 hour</p>
             <select
               value={price}
-              onchange={e => setPrice(e.target.value)}
+              onChange={e => setPrice(e.target.value)}
               className={css.select}
             >
               <option>To $</option>
-              {priceArraySorted.map(price => (
-                <option>{price}</option>
+              {priceArraySorted.map((price, index) => (
+                <option key={index} value={price}>
+                  {price}
+                </option>
               ))}
             </select>
           </label>

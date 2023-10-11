@@ -10,19 +10,31 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import advertReducer from './advertSlice';
+// import filterReducer from './filterSlice';
 import catalogReducer from './catalogSlice';
+import favoriteReducer from './favoriteSlice';
 
-const advertPersistConfig = {
-  key: 'advert',
+// const advertPersistConfig = {
+//   key: 'advert',
+//   storage,
+// };
+
+const favoritePersistConfig = {
+  key: 'favorite',
   storage,
+  whitelist: ['favorite'],
 };
-const persistedReducer = persistReducer(advertPersistConfig, advertReducer);
+// const persistedReducer = persistReducer(favoritePersistConfig, favoriteReducer);
+
+const persistedFavoriteReducer = persistReducer(
+  favoritePersistConfig,
+  favoriteReducer
+);
 
 export const store = configureStore({
   reducer: {
-    advert: persistedReducer,
     catalog: catalogReducer,
+    favorite: persistedFavoriteReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

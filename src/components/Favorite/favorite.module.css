@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  position: absolute;
+  left: 170px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 98%;
+  padding: 150px 20px;
+  margin: 0 auto;
+}
+
+.favorite {
+  margin: 50px 0 0 0;
+}
+
+.favoriteList {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1290px;
+  gap: 29px;
+  margin-bottom: 100px;
+}

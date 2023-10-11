@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+// const handlePanding = (state, action) => {
+//   state.isLoading = true;
+// };
+
 const catalogSlice = createSlice({
   name: 'catalog',
   initialState: {
@@ -33,7 +37,7 @@ const catalogSlice = createSlice({
       state.filters = { ...state.filters, ...action.payload };
     },
     setFavorites: (state, action) => {
-      state.favorites = { ...state.stateFavorites, ...action.payload };
+      state.favorites = { ...state.favorites, ...action.payload };
     },
   },
 });
