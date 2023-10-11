@@ -7,12 +7,6 @@ export default function Modal({ handleToggleModal, closeModal, advert }) {
   const address = advert.address.split(',');
   const city = address[1];
   const country = address[2];
-  // const justRentalPrice = advert.rentalPrice.slice(
-  //   1,
-  //   advert.rentalPrice.length
-  // );
-  // const rentalConditions = advert.rentalConditions.split('\n');
-  // const minAge = rentalConditions[0].split(': ');
 
   let mileage = advert.mileage.toString().split('');
   mileage.splice(mileage.length - 3, 0, ',');
@@ -30,7 +24,7 @@ export default function Modal({ handleToggleModal, closeModal, advert }) {
     }
   };
   window.addEventListener('keydown', ifPressEscape);
-  console.log(advert);
+
   return (
     <div className={css.backdrop} onClick={handleBackdropClick}>
       <div className={css.modal}>
@@ -42,7 +36,6 @@ export default function Modal({ handleToggleModal, closeModal, advert }) {
           height={268}
         />
 
-        {/* <div className={css.infoBlock}> */}
         <div className={css.info}>
           <h2 className={css.title}>
             {advert.make} <span className={css.model}>{advert.model}</span>

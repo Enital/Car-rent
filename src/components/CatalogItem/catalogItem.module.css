@@ -28,13 +28,11 @@
 }
 
 .img {
-  /* margin-top: 50px; */
   border-radius: 12px;
   object-fit: cover;
   overflow: hidden;
   width: 274px;
   height: 268px;
-  /* margin-bottom: 14px; */
 }
 
 .imgWrapper {
@@ -48,10 +46,6 @@
   background: transparent;
   border: none;
 }
-
-/* .buttonText {
-  color: #fff;
-} */
 
 .heartFill {
   fill: rgba(52, 112, 255, 1);

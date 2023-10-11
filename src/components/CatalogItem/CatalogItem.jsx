@@ -50,7 +50,6 @@ export default function CatalogItem({ advert }) {
         />
       )}
       <li className={css.item}>
-        {/* <div className={css.image}></div> */}
         <div className={css.imgWrapper}>
           <button
             onClick={handleFavorite}

@@ -36,7 +36,6 @@ export default function Catalog() {
       setIsButton(true);
     }
   }, [page]);
-  // console.log(adverts);
   const filteredAdverts = adverts.filter(advert => {
     if (filters.make && adverts.make !== filters.make) {
       return false;
@@ -58,7 +57,6 @@ export default function Catalog() {
     getData(page);
   };
 
-  // console.log(adverts);
   return (
     <div className={css.catalog}>
       {adverts && (

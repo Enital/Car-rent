@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
 
 import css from './filterBar.module.css';
 
@@ -37,7 +36,6 @@ export default function CatalogItem({ adverts, onFilter }) {
     onFilter(filter);
   };
   return (
-    // <div className={css.container}>
     <div className={css.filter}>
       <form onSubmit={handleFormSubmit}>
         <label htmlFor="Car brand">
@@ -96,6 +94,5 @@ export default function CatalogItem({ adverts, onFilter }) {
         </button>
       </form>
     </div>
-    // </div>
   );
 }
