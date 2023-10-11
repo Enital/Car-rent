@@ -4,7 +4,7 @@ import css from './sideBar.module.css';
 export default function Sidebar() {
   return (
     <div className={css.sidebar}>
-      <div className={css.sidebarLogo}>Car Rent</div>
+      <h1 className={css.sidebarLogo}>Car Rent Ukraine</h1>
       <div className={css.sidebarMenu}>
         <div className={css.sidebarMenuIndicator}></div>
         <ul className={css.sidebarList}>

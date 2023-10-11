@@ -1,14 +1,16 @@
 .sidebar {
   position: fixed;
+  z-index: 10;
   top: 0;
   left: 0;
+  text-align: center;
   height: 100vh;
   width: 160px;
   background-color: #abc;
 }
 
 .sidebarLogo {
-  display: grid;
+  /* display: grid; */
   place-items: center;
   height: 120px;
   font-size: 1.5rem;
@@ -58,7 +60,6 @@
   color: #fff;
   transition: all .5s cubic-bezier(.22, .61, .36, 1);
 }
-
 
 
 .sidebarMenuItemIcon {
